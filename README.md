@@ -1,6 +1,6 @@
-# MoE-PrO: prediction-centric UQ with a mixture of experts
+# PrO-MoE: prediction centric uncertainty quantification via mixture of experts
 
-JAX code for MoE-PrO. Each expert carries its own particle cloud, and a softmax gate
+JAX code for PrO-MoE. Each expert carries its own particle cloud, and a softmax gate
 decides which expert explains each input $x$. Particles move by Langevin steps. The gate
 is trained by SGD or Adam on the same objective.
 
@@ -55,7 +55,7 @@ Each experiment prints the expert weights $\pi_e$ and writes a figure to `figs/`
   periods also needs $|\theta_2|$ far outside the prior, so it is better to rescale $x$
   than to widen the prior.
 
-## Using it on your own problem
+## Using it for other things
 
 Copy one of the experiments and edit it. Each experiment puts `src/` on `sys.path`, so it runs from
 any directory. You supply four things: data, a prior, a per-datum log-likelihood and a config.
